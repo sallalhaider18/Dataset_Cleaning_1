@@ -1,0 +1,18 @@
+Outliers removal methods:
+what to use and when?
+IQR (Interquartile Range) Method
+
+The IQR method is a statistical technique used to detect outliers based on the spread of the middle 50% of the data. It works by calculating the first quartile (Q1) and third quartile (Q3), then computing the interquartile range as IQR = Q3 − Q1. Any data point that lies below Q1 − 1.5×IQR or above Q3 + 1.5×IQR is considered an outlier. This method is highly robust because it does not assume any specific distribution and is less affected by extreme values. It is widely used in exploratory data analysis and real-world datasets where data may be skewed or not normally distributed.
+
+---
+
+Z-Score Method
+
+The Z-score method detects outliers by measuring how far a data point is from the mean in terms of standard deviations. It is calculated using the formula z = (x − μ) / σ, where μ is the mean and σ is the standard deviation. A common rule is that any value with an absolute Z-score greater than 3 is considered an outlier. This method works best when the data follows a normal (bell-shaped) distribution. However, it is sensitive to extreme values, which can distort the mean and standard deviation, making it less reliable for skewed datasets.
+
+---
+
+Isolation Forest Method
+
+Isolation Forest is a machine learning-based technique for detecting anomalies in data. Instead of relying on statistical thresholds, it works by randomly splitting the dataset and isolating observations. Outliers are easier to isolate because they differ significantly from normal patterns, so they require fewer splits to separate. The model assigns an anomaly score, and points that are isolated quickly are flagged as outliers. This method performs very well on high-dimensional and complex datasets and is commonly used in real-world applications such as fraud detection and system monitoring.
+
